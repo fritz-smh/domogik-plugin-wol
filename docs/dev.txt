@@ -1,0 +1,52 @@
+========================
+Development informations
+========================
+
+Timeout on sensors
+==================
+
+The timeout is set to 0 for all sensors : as the interval between 2 checks is a global parameter, we can't set a proper default timeout. If needed, the timeout should be set manually by the user for this plugin.
+
+xPL messages
+============
+
+xpl-stat
+--------
+
+The **sensor.basic** message is used to validate the command reception: ::
+
+    xpl-stat
+    {
+    ...
+    }
+    sensor.basic
+    {
+    type=wakeonlan
+    device=<mac address>
+    port=<mac port>
+    current=high
+    }
+
+xpl-trig
+--------
+
+n/a
+
+xpl-cmnd
+--------
+
+The **control.basic** message is used: ::
+
+    xpl-cmnd
+    {
+    ...
+    }
+    control.basic
+    {
+    type=wakeonlan
+    device=<mac address>
+    port=<mac port>
+    current=high
+    }
+
+

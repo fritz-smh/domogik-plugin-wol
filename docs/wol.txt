@@ -1,0 +1,47 @@
+.. _index:
+
+==========
+Plugin wol
+==========
+
+Purpose
+=======
+
+The wol plugin is used to wake up computers, servers or any network element.
+
+Dependencies
+============
+
+There is no dependency.
+
+Plugin configuration
+====================
+
+There is no global configuration option for this plugin.
+
+Create the domogik devices
+==========================
+
+Domogik device type : wol.wol
+-----------------------------
+
+2 parameters are needed for a domogik device creation:
+
+===================== =========================== ======================================================================
+Key                   Type                        Description
+===================== =========================== ======================================================================
+device                string                      The MAC address of the computer/server to wake up.
+--------------------- --------------------------- ----------------------------------------------------------------------
+port                  number                      The port to use to wake up the computer/server.
+===================== =========================== ======================================================================
+
+Start the plugin
+================
+
+You can now start the plugin (start button) and use the created domogik devices.
+
+Set up your widgets on the user interface
+=========================================
+
+You can now place the widgets of your devices features on the user interface.
+

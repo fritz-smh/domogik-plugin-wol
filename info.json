@@ -1,0 +1,112 @@
+{
+    "products" : [ ],
+    "configuration": [],
+    "xpl_commands": {
+        "wol" : {
+            "name": "wol",
+            "schema": "control.basic",
+            "xplstat_name": "wol",
+            "parameters": {
+                "static": [
+                        {
+                            "key": "type",
+                            "value": "wakeonlan"
+                        }
+                    ],
+                "device": []
+            }
+        }
+    }, 
+    "xpl_stats": {
+       "wol": {
+            "name": "wol",
+            "schema": "sensor.basic",
+            "parameters": {
+                    "static": [
+                        {
+                            "key": "type",
+                            "value": "wakeonlan"
+                        }
+                    ],
+                    "device": [],
+                    "dynamic": [
+                        {
+                             "key": "current",
+                             "sensor": "wol",
+			     "ignore_values": ""
+                        }
+                    ]
+                }
+       }
+    },
+    "commands": {
+        "wol" : {
+            "name" : "Wake on Lan",
+            "return_confirmation" : true,
+            "parameters" : [
+                {
+                    "key" : "current",
+                    "data_type" : "DT_Trigger",
+                    "conversion" : "from_DT_Trigger_to_high"
+                }
+            ],
+            "xpl_command" : "wol"
+        }
+    },
+    "sensors": {
+	"wol": {
+		"name": "Wol",
+                "data_type": "DT_Trigger",
+                "conversion": "from_high_to_DT_Trigger",
+                "incremental": false,
+                "timeout": 0,
+                "history": {
+                    "store": false,
+                    "duplicate": false,
+                    "max": 0,
+                    "expire": 0,
+                    "round_value": 0
+                }
+	}
+    },
+    "device_types": {
+        "wol.wol": {
+            "description": "Wake on lan", 
+            "id": "wol.wol",
+            "name": "Wake on lan",
+            "commands": ["wol"],
+            "sensors": ["wol"],
+            "parameters": [
+                {
+                    "key": "device",
+                    "xpl": true,
+                    "description": "The MAC address the network element you want to wake on",
+                    "type": "string"
+                },
+                {
+                    "key": "port",
+                    "xpl": true,
+                    "description": "The wake on lan port to use (0 ... 9). Most common values are 7, 9 or 0.",
+                    "type": "integer"
+                }
+            ]
+        }
+    }, 
+    "identity": {
+        "author": "Fritz",
+        "author_email": "fritz.smh at gmail.com,",
+        "tags": ["wol", "computer"],
+        "dependencies": [
+            {   
+                "id": "python-nmap (>=0.4.3)",
+                "type": "python"
+            }
+        ],
+        "description": "Awake computers on a network thanks to Wake On Lan feature (WOL)",
+        "domogik_min_version": "0.4.1", 
+        "name": "wol", 
+        "type": "plugin", 
+        "version": "1.0"
+    }, 
+    "json_version": 2
+}
