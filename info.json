@@ -106,7 +106,7 @@
         "domogik_min_version": "0.4.1", 
         "name": "wol", 
         "type": "plugin", 
-        "version": "1.0"
+        "version": "1.1"
     }, 
     "json_version": 2
 }
