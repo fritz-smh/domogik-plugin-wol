@@ -105,7 +105,7 @@ if __name__ == "__main__":
         for dev in devices:
             # fill in the params
             params["device_type"] = "wol.wol"
-            params["name"] = "test_device_wol_{0}".format(dev)
+            params["name"] = "test_device_wol_{0}_é".format(dev)
             params["reference"] = "reference"
             params["description"] = "description"
             # global params

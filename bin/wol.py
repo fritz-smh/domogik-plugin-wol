@@ -69,14 +69,6 @@ class WolManager(XplPlugin):
                  {'schema': 'control.basic',
                   'xpltype': 'xpl-cmnd'})
 
-        ### For each device
-        # TODO : delete these lines
-        #threads = {}
-        #for a_device in self.devices:
-        #    try:
-        #        mac = self.get_parameter_for_feature(a_device, "xpl_stats", "wol", "device")
-        #        port = self.get_parameter_for_feature(a_device, "xpl_stats", "wol", "port")
-
         # notify ready
         self.ready()
 
